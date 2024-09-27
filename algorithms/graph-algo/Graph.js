@@ -41,18 +41,18 @@ class Graph{
 
 const graph = new Graph();
 
-graph.addNode("A");
-graph.addNode("B");
-graph.addNode("C");
-graph.addNode("D");
+// graph.addNode("A");
+// graph.addNode("B");
+// graph.addNode("C");
+// graph.addNode("D");
 
-  graph.display();
+//   graph.display();
 
-  graph.addEdge("A", "B");
-graph.addEdge("A", "C");
-graph.addEdge("B", "D");
-graph.addEdge("C", "D");
+//   graph.addEdge("A", "B");
+// graph.addEdge("A", "C");
+// graph.addEdge("B", "D");
+// graph.addEdge("C", "D");
 
-graph.removeEdge("A", "B");
-graph.removeNode("C");
+// graph.removeEdge("A", "B");
+// graph.removeNode("C");
 export const values =  graph.display();
