@@ -5,7 +5,7 @@ import { findMax } from "./techniques/divide_conquer.js";
 import { values } from "./graph-algo/Graph.js";
 // import { maxSubarraySum } from "./techniques/slidingWIndow.js";
 import { maxSubArray } from "./practice.js";
-import { longestSubstringWithKDistinct } from "./techniques/slidingWIndow.js";
+import { longestSubstringWithKDistinct,fruitsIntoBaskets ,permutationString} from "./techniques/slidingWIndow.js";
 // const maxNum = findMax([64, 25, 86, 22, 11]);
 
 // console.log(maxNum);
@@ -25,4 +25,14 @@ import { longestSubstringWithKDistinct } from "./techniques/slidingWIndow.js";
 
 // console.log(resultArr,maxSum);
 
-longestSubstringWithKDistinct('PARAS',2);
+// const subStr =  longestSubstringWithKDistinct('araaci',2);
+
+// console.log(subStr);
+
+// const fruitLen =  fruitsIntoBaskets([1, 2, 1, 2, 3, 2, 2],4);
+// console.log(fruitLen);
+
+
+const permu =  permutationString("ab","eidbaooo");
+
+console.log(permu);

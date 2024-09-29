@@ -63,16 +63,20 @@ export function longestSubstringWithKDistinct(string, k) {
   //   loop through string
   for (let windowEnd = 0; windowEnd < string.length; windowEnd++) {
     let rightChar = string[windowEnd];
-    if (!(rightChar in charFrequency)) {
-      charFrequency[rightChar] = 0;
+    // console.log(string[windowEnd]);
+    // console.log(rightChar);
+    if (!(rightChar in characterFrequency)) {
+      characterFrequency[rightChar] = 0;
     }
-    charFrequency[rightChar]++;
+
+    characterFrequency[rightChar]++;
 
     // shrink the window if  we have more than 'k' distinct characters
 
-    while (Object.keys(charFrequency).length > 1) {
+    while (Object.keys(characterFrequency).length > k) {
       let leftChar = string[windowStart];
-      charFrequency[leftChar]--;
+
+      characterFrequency[leftChar]--;
 
       //  if count of left character is 0  , remove it from map
 
@@ -81,9 +85,57 @@ export function longestSubstringWithKDistinct(string, k) {
       }
       windowStart++;
     }
+
     // calculate the maximum length of the window
     maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
   }
 
   return maxLength;
+}
+
+/**
+ * fruits into baskets
+ */
+
+export function fruitsIntoBaskets(arr, k) {
+  let maxLength = 0;
+  let windowStart = 0;
+  let fruitFrequency = {};
+  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    let nextFruit = arr[windowEnd];
+    if (!(nextFruit in fruitFrequency)) {
+      fruitFrequency[nextFruit] = 0;
+    }
+    fruitFrequency[nextFruit]++;
+    // shrink the window
+    while (Object.keys(fruitFrequency).length > k) {
+      let leftFruit = arr[windowStart];
+      fruitFrequency[leftFruit]--;
+      if (fruitFrequency[leftFruit] == 0) {
+        delete fruitFrequency[leftFruit];
+      }
+      windowStart++;
+    }
+    // Calculate the max length after shrinking the window
+    maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+  }
+  return maxLength;
+}
+
+/**
+ * permutation of string
+ */
+
+export function permutationString(s1, s2) {
+  let characterFrequency = {};
+  let windowStart = 0;
+  for (let windowEnd = 0; windowEnd < s2.length; windowEnd++) {
+    let nextChar = s2[windowEnd];
+    console.log(nextChar);
+    if (!nextChar in characterFrequency) {
+      characterFrequency[nextChar] = 0;
+    }
+    characterFrequency[nextChar]++;
+  }
+  console.log(characterFrequency);
 }
