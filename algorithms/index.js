@@ -4,7 +4,7 @@ import quickSort from "./sort-algo/quick-sort.js";
 import { findMax } from "./techniques/divide_conquer.js";
 import { values } from "./graph-algo/Graph.js";
 // import { maxSubarraySum } from "./techniques/slidingWIndow.js";
-import { maxSubArray } from "./practice.js";
+import { maxSubArray ,threeSum} from "./practice.js";
 import { longestSubstringWithKDistinct,fruitsIntoBaskets ,permutationString} from "./techniques/slidingWIndow.js";
 // const maxNum = findMax([64, 25, 86, 22, 11]);
 
@@ -33,6 +33,11 @@ import { longestSubstringWithKDistinct,fruitsIntoBaskets ,permutationString} fro
 // console.log(fruitLen);
 
 
-const permu =  permutationString("ab","eidbaooo");
+// const permu =  permutationString("ab","eidbaooo");
 
-console.log(permu);
+// console.log(permu);
+
+
+ const result = threeSum([-1,0,1,2,-1,-4]);
+
+ console.log(result);
