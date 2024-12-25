@@ -130,5 +130,47 @@ export function removeElem(arr, val) {
 }
 
 /**
- * 
+ * Longest Palindromic Substring
+ * hold this question for now
  */
+
+export function longestPalindromicSubstring(s){
+  let windowStart = 0;
+  let string = '';
+  let center = Math.ceil(s.length/2);
+  for (let i = 0; i < center; i++) {
+    string += s[i];
+  }
+  console.log(string);
+}
+
+
+/**
+ * check if a number is palindrome or not
+ */
+
+export function isPalindrome(x){
+  let reversed = '';
+  let numToString =  String(x);
+  for(let i = numToString.length-1; i>=0; i--){
+      reversed+=numToString[i];
+  }
+  if(reversed==numToString){
+      return true;
+  }else{
+      return false;
+  }
+}
+
+export function searchElem(nums,target){
+  let index  = -1;
+for(let i = 0; i<nums.length; i++){
+  //   console.log(nums[i]);
+    if(target==nums[i]){
+        console.log('matched');
+       index = i;
+    }
+}
+
+return index;
+}
